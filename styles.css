@@ -3014,6 +3014,65 @@ img, svg {
 
 
 /* ============================================================
+   TAB NAVIGATION
+   ============================================================ */
+
+.tab-nav {
+  display: flex;
+  gap: 24px;
+  border-bottom: 1px solid var(--ice-3);
+}
+
+.tab-nav__item {
+  font-family: 'Agrandir Wide', sans-serif;
+  font-size: 20px;
+  line-height: 23px;
+  font-weight: 800;
+  text-transform: lowercase;
+  cursor: pointer;
+  padding-bottom: 12px;
+  border: none;
+  border-bottom: 2px solid transparent;
+  background: none;
+  color: var(--ice-5);
+  transition: color 0.15s ease, border-color 0.15s ease;
+  margin-bottom: -1px;
+}
+
+.tab-nav__item:hover {
+  color: var(--ice-8);
+}
+
+.tab-nav__item--active {
+  color: var(--ice-10);
+  border-bottom-color: var(--ice-10);
+}
+
+[data-theme="dark"] .tab-nav {
+  border-bottom-color: var(--slate-3);
+}
+
+[data-theme="dark"] .tab-nav__item {
+  color: var(--slate-5);
+}
+
+[data-theme="dark"] .tab-nav__item:hover {
+  color: var(--slate-8);
+}
+
+[data-theme="dark"] .tab-nav__item--active {
+  color: var(--slate-10);
+  border-bottom-color: var(--slate-10);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .tab-nav__item {
+    transition: none;
+  }
+}
+
+
+/* ============================================================
    FAQ ACCORDION
    ============================================================ */
 
