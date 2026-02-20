@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Radio & Checkmarks — Portals Style Guide</title>
+  <title>Accordion — Portals Style Guide</title>
   <link rel="stylesheet" href="../styles.css">
   <script>
     (function(){var t=localStorage.getItem('portals-theme');if(t==='dark')document.documentElement.setAttribute('data-theme','dark');})();
@@ -40,13 +40,13 @@
           </div>
         </details>
 
-        <!-- Input & Selection (active) -->
-        <details class="sidebar-category" open>
+        <!-- Input & Selection -->
+        <details class="sidebar-category">
           <summary>Input & Selection</summary>
           <div class="sidebar-category__content">
             <div class="sidebar-category__inner">
               <a href="buttons.html" class="sidebar-link">Buttons & Toggles</a>
-              <a href="radio.html" class="sidebar-link sidebar-link--active">Radio & Checkmarks</a>
+              <a href="radio.html" class="sidebar-link">Radio & Checkmarks</a>
               <a href="dropdowns.html" class="sidebar-link">Dropdowns</a>
               <a href="#date-picker" class="sidebar-link">Date picker</a>
               <a href="#file-upload" class="sidebar-link">File upload</a>
@@ -96,12 +96,12 @@
           </div>
         </details>
 
-        <!-- Content display -->
-        <details class="sidebar-category">
+        <!-- Content display (active) -->
+        <details class="sidebar-category" open>
           <summary>Content display</summary>
           <div class="sidebar-category__content">
             <div class="sidebar-category__inner">
-              <a href="accordion.html" class="sidebar-link">Accordion</a>
+              <a href="accordion.html" class="sidebar-link sidebar-link--active">Accordion</a>
               <a href="#avatar" class="sidebar-link">Avatar</a>
               <a href="cards.html" class="sidebar-link">Cards</a>
               <a href="#draggable-list" class="sidebar-link">Draggable list</a>
@@ -134,122 +134,47 @@
     <!-- Main Content -->
     <main class="style-guide__content">
 
-      <!-- ==================== RADIO ==================== -->
-      <section class="style-guide__section" id="radio">
+      <div class="page-header">
+        <h2 class="page-header__title">accordion</h2>
+        <p class="page-header__description">Expandable content panels built with native HTML details/summary elements. Supports smooth transitions for chevron rotation, background color, and box shadow. No JavaScript required.</p>
+      </div>
 
-        <!-- Page Header -->
-        <div class="page-header">
-          <h2 class="page-header__title">radio & checkmarks</h2>
-          <p class="page-header__description">Radio buttons allow users to select a single option from a group — selecting one automatically deselects the rest. Checkmarks allow users to select multiple options independently. Tapping or clicking the label next to either control should activate it.</p>
-        </div>
+      <!-- ==================== FAQ ACCORDION ==================== -->
+      <section class="style-guide__section" id="faq-accordion">
 
-        <!-- Boxed Radio Selection -->
         <div class="component-display">
-          <div class="component-display__label">Boxed Radio Selection</div>
-          <div class="component-display__row">
+          <div class="component-display__label">FAQ Accordion</div>
+          <div class="faq-list">
 
-            <div class="component-display__column">
-              <div class="radio-group" role="radiogroup" aria-label="Plan selection">
-                <div>
-                  <input class="radio-input" type="radio" id="boxed-A" name="boxed" value="starter">
-                  <label class="radio-boxed" for="boxed-A">
-                    <div class="radio-boxed__text">
-                      <div class="radio-boxed__title">Starter Plan</div>
-                      <div class="radio-boxed__description">Best for individuals starting out with basic features and limited storage.</div>
-                    </div>
-                    <span class="radio-circle"></span>
-                  </label>
-                </div>
-                <div>
-                  <input class="radio-input" type="radio" id="boxed-B" name="boxed" value="pro" checked>
-                  <label class="radio-boxed" for="boxed-B">
-                    <div class="radio-boxed__text">
-                      <div class="radio-boxed__title">Pro Plan</div>
-                      <div class="radio-boxed__description">Great for growing teams with advanced collaboration tools and priority support.</div>
-                    </div>
-                    <span class="radio-circle"></span>
-                  </label>
-                </div>
-                <div>
-                  <input class="radio-input" type="radio" id="boxed-C" name="boxed" value="enterprise">
-                  <label class="radio-boxed" for="boxed-C">
-                    <div class="radio-boxed__text">
-                      <div class="radio-boxed__title">Enterprise Plan</div>
-                      <div class="radio-boxed__description">Designed for large organisations needing custom integrations and dedicated account management.</div>
-                    </div>
-                    <span class="radio-circle"></span>
-                  </label>
-                </div>
-              </div>
-            </div>
+            <details class="faq-item" open>
+              <summary class="faq-item__question">
+                <span>what are warps?</span>
+                <svg class="faq-item__chevron" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </summary>
+              <p class="faq-item__answer">Warps are the virtual currency used across the Portals platform. They can be used to purchase in-game items, accessories, and premium features from the marketplace.</p>
+            </details>
 
-          </div>
-        </div>
+            <details class="faq-item">
+              <summary class="faq-item__question">
+                <span>how do I earn warps?</span>
+                <svg class="faq-item__chevron" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </summary>
+              <p class="faq-item__answer">You can earn warps by completing daily challenges, winning games, trading items on the marketplace, or purchasing them directly through the credits page.</p>
+            </details>
 
-        <!-- Simple Radio Selection -->
-        <div class="component-display">
-          <div class="component-display__label">Simple Radio Selection</div>
-          <div class="component-display__row">
-
-            <div class="component-display__column">
-              <div class="radio-group" role="radiogroup" aria-label="Notification preference">
-                <div>
-                  <input class="radio-input" type="radio" id="simple-A" name="simple" value="all">
-                  <label class="radio-label" for="simple-A">
-                    <span class="radio-circle"></span>
-                    <span class="radio-label__text">All notifications</span>
-                  </label>
-                </div>
-                <div>
-                  <input class="radio-input" type="radio" id="simple-B" name="simple" value="important" checked>
-                  <label class="radio-label" for="simple-B">
-                    <span class="radio-circle"></span>
-                    <span class="radio-label__text">Important only</span>
-                  </label>
-                </div>
-                <div>
-                  <input class="radio-input" type="radio" id="simple-C" name="simple" value="none">
-                  <label class="radio-label" for="simple-C">
-                    <span class="radio-circle"></span>
-                    <span class="radio-label__text">None</span>
-                  </label>
-                </div>
-              </div>
-            </div>
-
-          </div>
-        </div>
-
-        <!-- Checkmark Selection -->
-        <div class="component-display">
-          <div class="component-display__label">Checkmark Selection</div>
-          <div class="component-display__row">
-
-            <div class="component-display__column">
-              <div class="check-group" role="group" aria-label="Feature preferences">
-                <div>
-                  <input class="check-input" type="checkbox" id="check-A" name="features" value="notifications">
-                  <label class="check-label" for="check-A">
-                    <span class="check-square"></span>
-                    <span class="check-label__text">All notifications</span>
-                  </label>
-                </div>
-                <div>
-                  <input class="check-input" type="checkbox" id="check-B" name="features" value="important" checked>
-                  <label class="check-label" for="check-B">
-                    <span class="check-square"></span>
-                    <span class="check-label__text">Important only</span>
-                  </label>
-                </div>
-                <div>
-                  <input class="check-input" type="checkbox" id="check-C" name="features" value="none">
-                  <label class="check-label" for="check-C">
-                    <span class="check-square"></span>
-                    <span class="check-label__text">None</span>
-                  </label>
-                </div>
-              </div>
-            </div>
+            <details class="faq-item">
+              <summary class="faq-item__question">
+                <span>can I trade items with other players?</span>
+                <svg class="faq-item__chevron" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </summary>
+              <p class="faq-item__answer">Yes, you can trade items with other players through the marketplace. Simply list your item for sale or browse available items from other creators.</p>
+            </details>
 
           </div>
         </div>
