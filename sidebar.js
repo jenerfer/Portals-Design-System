@@ -42,53 +42,16 @@
 
 
 /* ============================================================
-   Game Card Fade-In — hide all cards, reveal entire grid at once
-   when all images have loaded (or after 3s safety timeout)
+   Game Card Fade-In — stagger cards in immediately on load
    ============================================================ */
 
 (function () {
   var cards = document.querySelectorAll('.game-card');
   if (!cards.length) return;
 
-  var images = [];
-  cards.forEach(function (card) {
-    var img = card.querySelector('img');
-    if (img && !img.complete) images.push(img);
+  cards.forEach(function (card, i) {
+    setTimeout(function () {
+      card.classList.add('game-card--visible');
+    }, i * 50);
   });
-
-  function revealAll() {
-    cards.forEach(function (card, i) {
-      setTimeout(function () {
-        card.classList.add('game-card--visible');
-      }, i * 50);
-    });
-  }
-
-  if (images.length === 0) {
-    revealAll();
-    return;
-  }
-
-  var loaded = 0;
-  var revealed = false;
-
-  function onLoad() {
-    loaded++;
-    if (!revealed && loaded >= images.length) {
-      revealed = true;
-      revealAll();
-    }
-  }
-
-  images.forEach(function (img) {
-    img.addEventListener('load', onLoad);
-    img.addEventListener('error', onLoad);
-  });
-
-  setTimeout(function () {
-    if (!revealed) {
-      revealed = true;
-      revealAll();
-    }
-  }, 3000);
 })();
