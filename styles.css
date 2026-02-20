@@ -699,6 +699,62 @@ img, svg {
 }
 
 
+/* ---------- Back Button Mini / Link Button Mini ---------- */
+
+.btn-back-mini,
+.btn-link-mini {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  color: var(--text-secondary);
+  transition: color 0.15s ease;
+  text-decoration: none;
+}
+
+.btn-back-mini:hover,
+.btn-link-mini:hover {
+  color: var(--text-primary);
+}
+
+.btn-back-mini__icon,
+.btn-link-mini__icon {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  border: 1.5px solid var(--border-default);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: border-color 0.15s ease;
+}
+
+.btn-back-mini:hover .btn-back-mini__icon,
+.btn-link-mini:hover .btn-link-mini__icon {
+  border-color: var(--border-strong);
+}
+
+.btn-back-mini__icon svg,
+.btn-link-mini__icon svg {
+  width: 12px;
+  height: 12px;
+}
+
+.btn-back-mini__text,
+.btn-link-mini__text {
+  margin-bottom: 0;
+  color: inherit;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 16px;
+  line-height: 28px;
+  font-weight: 500;
+}
+
+
 /* ===== Responsive — Mobile ===== */
 
 @media (max-width: 768px) {
