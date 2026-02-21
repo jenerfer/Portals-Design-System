@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Radio & Checkmarks — Portals Style Guide</title>
+  <title>File Upload — Portals Style Guide</title>
   <link rel="stylesheet" href="../styles.css">
   <script>
     (function(){var t=localStorage.getItem('portals-theme');if(t==='dark')document.documentElement.setAttribute('data-theme','dark');})();
@@ -46,10 +46,10 @@
           <div class="sidebar-category__content">
             <div class="sidebar-category__inner">
               <a href="buttons.html" class="sidebar-link">Buttons & Toggles</a>
-              <a href="radio.html" class="sidebar-link sidebar-link--active">Radio & Checkmarks</a>
+              <a href="radio.html" class="sidebar-link">Radio & Checkmarks</a>
               <a href="dropdowns.html" class="sidebar-link">Dropdowns</a>
               <a href="#date-picker" class="sidebar-link">Date picker</a>
-              <a href="file-upload.html" class="sidebar-link">File upload</a>
+              <a href="file-upload.html" class="sidebar-link sidebar-link--active">File upload</a>
               <a href="form-fields.html" class="sidebar-link">Form fields</a>
               <a href="#menu" class="sidebar-link">Menu</a>
               <a href="#segmented-control" class="sidebar-link">Segmented control</a>
@@ -134,123 +134,148 @@
     <!-- Main Content -->
     <main class="style-guide__content">
 
-      <!-- ==================== RADIO ==================== -->
-      <section class="style-guide__section" id="radio">
+      <!-- ==================== FILE UPLOAD ==================== -->
+      <section class="style-guide__section" id="file-upload">
 
         <!-- Page Header -->
         <div class="page-header">
-          <h2 class="page-header__title">radio & checkmarks</h2>
-          <p class="page-header__description">Radio buttons allow users to select a single option from a group — selecting one automatically deselects the rest. Checkmarks allow users to select multiple options independently. Tapping or clicking the label next to either control should activate it.</p>
+          <h2 class="page-header__title">file upload</h2>
+          <p class="page-header__description">A compact media upload component for attaching images and video. Files appear as a clean row of rounded thumbnails with hover-to-delete controls. Maximum of 6 files per upload.</p>
         </div>
 
-        <!-- Boxed Radio Selection -->
-        <div class="component-display">
-          <div class="component-display__label">Boxed Radio Selection</div>
-          <div class="component-display__row">
+        <!-- ===== Empty State ===== -->
+        <div class="section-header">
+          <h3 class="section-header__title">empty state</h3>
+          <p class="section-header__description">Before any files have been selected, the component shows a label and an upload button. Clicking the button opens the native file picker, which accepts images and video.</p>
+        </div>
 
-            <div class="component-display__column">
-              <div class="radio-group" role="radiogroup" aria-label="Plan selection">
-                <div>
-                  <input class="radio-input" type="radio" id="boxed-A" name="boxed" value="starter">
-                  <label class="radio-boxed" for="boxed-A">
-                    <div class="radio-boxed__text">
-                      <div class="radio-boxed__title">Starter Plan</div>
-                      <div class="radio-boxed__description">Best for individuals starting out with basic features and limited storage.</div>
-                    </div>
-                    <span class="radio-circle"></span>
-                  </label>
-                </div>
-                <div>
-                  <input class="radio-input" type="radio" id="boxed-B" name="boxed" value="pro" checked>
-                  <label class="radio-boxed" for="boxed-B">
-                    <div class="radio-boxed__text">
-                      <div class="radio-boxed__title">Pro Plan</div>
-                      <div class="radio-boxed__description">Great for growing teams with advanced collaboration tools and priority support.</div>
-                    </div>
-                    <span class="radio-circle"></span>
-                  </label>
-                </div>
-                <div>
-                  <input class="radio-input" type="radio" id="boxed-C" name="boxed" value="enterprise">
-                  <label class="radio-boxed" for="boxed-C">
-                    <div class="radio-boxed__text">
-                      <div class="radio-boxed__title">Enterprise Plan</div>
-                      <div class="radio-boxed__description">Designed for large organisations needing custom integrations and dedicated account management.</div>
-                    </div>
-                    <span class="radio-circle"></span>
-                  </label>
-                </div>
+        <div class="component-display">
+          <div class="component-display__label">upload trigger</div>
+          <div class="component-display__row">
+            <div class="component-display__column" style="max-width:600px;">
+              <div class="media-upload">
+                <p class="p1 media-upload__label">add featured images and video</p>
+                <label class="media-upload__btn">
+                  <input type="file" class="media-upload__input" accept="image/*,video/*" multiple>
+                  <span class="media-upload__btn-icon">
+                    <svg viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M8 1V15M1 8H15" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+                    </svg>
+                  </span>
+                  <span class="media-upload__btn-text">upload files</span>
+                </label>
               </div>
             </div>
-
           </div>
         </div>
 
-        <!-- Simple Radio Selection -->
-        <div class="component-display">
-          <div class="component-display__label">Simple Radio Selection</div>
-          <div class="component-display__row">
+        <!-- ===== With Previews ===== -->
+        <div class="section-header">
+          <h3 class="section-header__title">with previews</h3>
+          <p class="section-header__description">Once files are uploaded, thumbnails appear in a horizontal row alongside the button. Each thumbnail shows a delete icon on hover. The upload button remains visible until the 6-file limit is reached.</p>
+        </div>
 
-            <div class="component-display__column">
-              <div class="radio-group" role="radiogroup" aria-label="Notification preference">
-                <div>
-                  <input class="radio-input" type="radio" id="simple-A" name="simple" value="all">
-                  <label class="radio-label" for="simple-A">
-                    <span class="radio-circle"></span>
-                    <span class="radio-label__text">All notifications</span>
-                  </label>
-                </div>
-                <div>
-                  <input class="radio-input" type="radio" id="simple-B" name="simple" value="important" checked>
-                  <label class="radio-label" for="simple-B">
-                    <span class="radio-circle"></span>
-                    <span class="radio-label__text">Important only</span>
-                  </label>
-                </div>
-                <div>
-                  <input class="radio-input" type="radio" id="simple-C" name="simple" value="none">
-                  <label class="radio-label" for="simple-C">
-                    <span class="radio-circle"></span>
-                    <span class="radio-label__text">None</span>
+        <div class="component-display">
+          <div class="component-display__label">uploaded files &mdash; hover to delete</div>
+          <div class="component-display__row">
+            <div class="component-display__column" style="max-width:600px;">
+              <div class="media-upload" id="demo-upload">
+                <p class="p1 media-upload__label">add featured images and video</p>
+                <div class="media-upload__row">
+                  <!-- Preview 1 -->
+                  <div class="media-upload__thumb">
+                    <div class="media-upload__thumb-inner" style="background-color: var(--surface-sunken);"></div>
+                    <button class="media-upload__thumb-delete" aria-label="Remove file">
+                      <svg viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M2.5 2.5L9.5 9.5M9.5 2.5L2.5 9.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                      </svg>
+                    </button>
+                  </div>
+                  <!-- Preview 2 -->
+                  <div class="media-upload__thumb">
+                    <div class="media-upload__thumb-inner" style="background-color: var(--surface-sunken);"></div>
+                    <button class="media-upload__thumb-delete" aria-label="Remove file">
+                      <svg viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M2.5 2.5L9.5 9.5M9.5 2.5L2.5 9.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                      </svg>
+                    </button>
+                  </div>
+                  <!-- Preview 3 -->
+                  <div class="media-upload__thumb">
+                    <div class="media-upload__thumb-inner" style="background-color: var(--surface-sunken);"></div>
+                    <button class="media-upload__thumb-delete" aria-label="Remove file">
+                      <svg viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M2.5 2.5L9.5 9.5M9.5 2.5L2.5 9.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                      </svg>
+                    </button>
+                  </div>
+                  <!-- Upload button inline -->
+                  <label class="media-upload__btn media-upload__btn--inline">
+                    <input type="file" class="media-upload__input" accept="image/*,video/*" multiple>
+                    <span class="media-upload__btn-icon">
+                      <svg viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M8 1V15M1 8H15" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+                      </svg>
+                    </span>
                   </label>
                 </div>
               </div>
             </div>
-
           </div>
         </div>
 
-        <!-- Checkmark Selection -->
-        <div class="component-display">
-          <div class="component-display__label">Checkmark Selection</div>
-          <div class="component-display__row">
+        <!-- ===== Max Files Reached ===== -->
+        <div class="section-header">
+          <h3 class="section-header__title">maximum reached</h3>
+          <p class="section-header__description">When 6 files have been uploaded, the upload button is hidden and only the row of thumbnails remains. Users must remove a file before they can add another.</p>
+        </div>
 
-            <div class="component-display__column">
-              <div class="check-group" role="group" aria-label="Feature preferences">
-                <div>
-                  <input class="check-input" type="checkbox" id="check-A" name="features" value="notifications">
-                  <label class="check-label" for="check-A">
-                    <span class="check-square"></span>
-                    <span class="check-label__text">All notifications</span>
-                  </label>
-                </div>
-                <div>
-                  <input class="check-input" type="checkbox" id="check-B" name="features" value="important" checked>
-                  <label class="check-label" for="check-B">
-                    <span class="check-square"></span>
-                    <span class="check-label__text">Important only</span>
-                  </label>
-                </div>
-                <div>
-                  <input class="check-input" type="checkbox" id="check-C" name="features" value="none">
-                  <label class="check-label" for="check-C">
-                    <span class="check-square"></span>
-                    <span class="check-label__text">None</span>
-                  </label>
+        <div class="component-display">
+          <div class="component-display__label">6 of 6 files uploaded</div>
+          <div class="component-display__row">
+            <div class="component-display__column" style="max-width:600px;">
+              <div class="media-upload">
+                <p class="p1 media-upload__label">add featured images and video</p>
+                <div class="media-upload__row">
+                  <div class="media-upload__thumb">
+                    <div class="media-upload__thumb-inner" style="background-color: var(--surface-sunken);"></div>
+                    <button class="media-upload__thumb-delete" aria-label="Remove file">
+                      <svg viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2.5 2.5L9.5 9.5M9.5 2.5L2.5 9.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+                    </button>
+                  </div>
+                  <div class="media-upload__thumb">
+                    <div class="media-upload__thumb-inner" style="background-color: var(--surface-sunken);"></div>
+                    <button class="media-upload__thumb-delete" aria-label="Remove file">
+                      <svg viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2.5 2.5L9.5 9.5M9.5 2.5L2.5 9.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+                    </button>
+                  </div>
+                  <div class="media-upload__thumb">
+                    <div class="media-upload__thumb-inner" style="background-color: var(--surface-sunken);"></div>
+                    <button class="media-upload__thumb-delete" aria-label="Remove file">
+                      <svg viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2.5 2.5L9.5 9.5M9.5 2.5L2.5 9.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+                    </button>
+                  </div>
+                  <div class="media-upload__thumb">
+                    <div class="media-upload__thumb-inner" style="background-color: var(--surface-sunken);"></div>
+                    <button class="media-upload__thumb-delete" aria-label="Remove file">
+                      <svg viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2.5 2.5L9.5 9.5M9.5 2.5L2.5 9.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+                    </button>
+                  </div>
+                  <div class="media-upload__thumb">
+                    <div class="media-upload__thumb-inner" style="background-color: var(--surface-sunken);"></div>
+                    <button class="media-upload__thumb-delete" aria-label="Remove file">
+                      <svg viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2.5 2.5L9.5 9.5M9.5 2.5L2.5 9.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+                    </button>
+                  </div>
+                  <div class="media-upload__thumb">
+                    <div class="media-upload__thumb-inner" style="background-color: var(--surface-sunken);"></div>
+                    <button class="media-upload__thumb-delete" aria-label="Remove file">
+                      <svg viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2.5 2.5L9.5 9.5M9.5 2.5L2.5 9.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+                    </button>
+                  </div>
                 </div>
               </div>
             </div>
-
           </div>
         </div>
 
