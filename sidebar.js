@@ -54,4 +54,15 @@
       card.classList.add('game-card--visible');
     }, i * 50);
   });
+
+  // Fade in each image individually once loaded
+  document.querySelectorAll('.game-card__thumbnail img').forEach(function (img) {
+    if (img.complete) {
+      img.classList.add('loaded');
+    } else {
+      img.addEventListener('load', function () {
+        img.classList.add('loaded');
+      });
+    }
+  });
 })();
