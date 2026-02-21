@@ -22,6 +22,7 @@ body {
   color: var(--text-primary);
   background-color: var(--surface-primary);
   line-height: 1.5;
+  overflow-x: hidden;
 }
 
 img, svg {
