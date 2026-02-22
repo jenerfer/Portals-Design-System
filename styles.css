@@ -3,6 +3,23 @@
    ============================================================ */
 
 
+/* ===== View Transitions ===== */
+
+@view-transition {
+  navigation: auto;
+}
+
+::view-transition-old(root) {
+  animation-duration: 0.5s;
+  animation-timing-function: ease;
+}
+
+::view-transition-new(root) {
+  animation-duration: 0.5s;
+  animation-timing-function: ease;
+}
+
+
 /* ===== Reset ===== */
 
 *, *::before, *::after {
