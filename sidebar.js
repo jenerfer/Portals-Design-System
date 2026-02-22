@@ -1,4 +1,16 @@
 /* ============================================================
+   Font Loading Gate — hide page until custom fonts are ready
+   ============================================================ */
+
+document.fonts.ready.then(function () {
+  document.body.classList.add('fonts-loaded');
+});
+setTimeout(function () {
+  document.body.classList.add('fonts-loaded');
+}, 2000);
+
+
+/* ============================================================
    Sidebar Accordion — Only one category open at a time
    ============================================================ */
 
