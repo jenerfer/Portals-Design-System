@@ -23,12 +23,6 @@ body {
   background-color: var(--surface-primary);
   line-height: 1.5;
   overflow-x: hidden;
-  opacity: 0;
-  transition: opacity 0.4s ease-out;
-}
-
-body.fonts-loaded {
-  opacity: 1;
 }
 
 img, svg {
