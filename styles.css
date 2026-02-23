@@ -3011,6 +3011,18 @@ img, svg {
   justify-content: space-between;
 }
 
+/* Reset paragraph margins inside compact popover UI */
+.notif-popover h1,
+.notif-popover h2,
+.notif-popover h3,
+.notif-popover h4,
+.notif-popover h5,
+.notif-popover h6,
+.notif-popover p,
+.notif-popover span {
+  margin-bottom: 0;
+}
+
 .notif-popover__close {
   display: inline-flex;
   align-items: center;
@@ -3064,6 +3076,11 @@ img, svg {
   justify-content: space-between;
   flex-wrap: wrap;
   gap: 4px;
+}
+
+/* Override line-height for row title — Figma specifies 28px, global class has 33px */
+.notif-popover__meta .p1-xl-bold {
+  line-height: 28px;
 }
 
 .notif-popover__text {
