@@ -2955,7 +2955,7 @@ img, svg {
 }
 
 .marketplace-nav__icon-btn:hover {
-  color: var(--text-primary);
+  color: var(--icon-hover);
 }
 
 .marketplace-nav__icon-btn svg {
