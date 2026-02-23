@@ -2923,6 +2923,62 @@ img, svg {
 }
 
 
+/* Logged-in icon group — hidden by default */
+
+.marketplace-nav__user {
+  display: none;
+  align-items: center;
+  gap: 15px;
+  margin-left: auto;
+}
+
+.marketplace-nav__inner--logged-in .marketplace-nav__auth {
+  display: none;
+}
+
+.marketplace-nav__inner--logged-in .marketplace-nav__user {
+  display: flex;
+}
+
+.marketplace-nav__icon-btn {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+  color: var(--text-secondary);
+  transition: color 0.2s ease;
+}
+
+.marketplace-nav__icon-btn:hover {
+  color: var(--text-primary);
+}
+
+.marketplace-nav__icon-btn svg {
+  width: 30px;
+  height: 30px;
+  display: block;
+}
+
+.marketplace-nav__notif-dot {
+  position: absolute;
+  top: 2px;
+  right: 2px;
+  width: 10px;
+  height: 10px;
+  background: var(--blue-1, #6AC1FF);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.marketplace-nav__notif-dot--hidden {
+  display: none;
+}
+
+
 /* ---------- Left Sidebar ---------- */
 
 .marketplace-sidebar {
