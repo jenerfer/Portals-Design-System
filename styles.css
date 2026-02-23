@@ -3021,8 +3021,8 @@ img, svg {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 20px;
-  height: 20px;
+  width: 26px;
+  height: 26px;
   padding: 0;
   border: none;
   background: none;
@@ -3036,8 +3036,8 @@ img, svg {
 }
 
 .notif-popover__close svg {
-  width: 16px;
-  height: 16px;
+  width: 26px;
+  height: 26px;
 }
 
 .notif-popover__row {
