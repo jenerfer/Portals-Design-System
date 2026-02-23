@@ -2950,7 +2950,7 @@ img, svg {
   border: none;
   cursor: pointer;
   padding: 4px;
-  color: var(--text-tertiary);
+  color: var(--icon-default);
   transition: color 0.2s ease;
 }
 
