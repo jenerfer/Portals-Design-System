@@ -2984,8 +2984,8 @@ img, svg {
 
 .notif-popover {
   position: absolute;
-  top: calc(100% + 12px);
-  right: 0;
+  top: calc(100% + 17px);
+  right: 53px;
   width: 445px;
   border-radius: 15px;
   box-shadow: 1px 5px 16.1px 0px var(--shadow-elevation);
@@ -2995,6 +2995,7 @@ img, svg {
   pointer-events: none;
   transition: opacity 0.25s ease, transform 0.25s cubic-bezier(0.4, 0, 0.2, 1);
   overflow: hidden;
+  padding-bottom: 10px;
 }
 
 .notif-popover--open {
