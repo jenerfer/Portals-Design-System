@@ -3012,15 +3012,9 @@ img, svg {
 }
 
 /* Reset paragraph margins inside compact popover UI */
-.notif-popover h1,
-.notif-popover h2,
-.notif-popover h3,
-.notif-popover h4,
-.notif-popover h5,
-.notif-popover h6,
-.notif-popover p,
-.notif-popover span {
-  margin-bottom: 0;
+.notif-popover *:not(svg):not(path) {
+  margin-bottom: 0 !important;
+  margin-top: 0 !important;
 }
 
 .notif-popover__close {
@@ -3085,11 +3079,28 @@ img, svg {
 
 .notif-popover__text {
   color: var(--text-secondary);
+  align-self: stretch;
+}
+
+.notif-popover .btn {
+  align-self: flex-start;
 }
 
 .notif-popover__handle {
   font-weight: 700;
   color: var(--blue-1);
+}
+
+/* System notification avatar (e.g. Portals brand) */
+.notif-popover__avatar--system {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--surface-sunken);
+  color: var(--text-tertiary);
+  font-family: 'Agrandir Wide', sans-serif;
+  font-weight: 700;
+  font-size: 24px;
 }
 
 @media (max-width: 520px) {
