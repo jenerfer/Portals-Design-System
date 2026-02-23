@@ -2984,7 +2984,7 @@ img, svg {
 
 .notif-popover {
   position: absolute;
-  top: calc(100% + 17px);
+  top: calc(100% + 22px);
   right: 53px;
   width: 445px;
   border-radius: 15px;
@@ -2995,7 +2995,6 @@ img, svg {
   pointer-events: none;
   transition: opacity 0.25s ease, transform 0.25s cubic-bezier(0.4, 0, 0.2, 1);
   overflow: hidden;
-  padding-bottom: 10px;
 }
 
 .notif-popover--open {
@@ -3047,6 +3046,10 @@ img, svg {
   display: flex;
   gap: 12px;
   align-items: flex-start;
+}
+
+.notif-popover__row:last-child {
+  padding-bottom: 30px;
 }
 
 .notif-popover__avatar {
