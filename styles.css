@@ -2930,6 +2930,7 @@ img, svg {
   align-items: center;
   gap: 15px;
   margin-left: auto;
+  position: relative;
 }
 
 .marketplace-nav__inner--logged-in .marketplace-nav__auth {
@@ -2976,6 +2977,109 @@ img, svg {
 
 .marketplace-nav__notif-dot--hidden {
   display: none;
+}
+
+
+/* ===== Notification Popover ===== */
+
+.notif-popover {
+  position: absolute;
+  top: calc(100% + 12px);
+  right: 0;
+  width: 445px;
+  border-radius: 15px;
+  box-shadow: 1px 5px 16.1px 0px var(--shadow-elevation);
+  z-index: 300;
+  opacity: 0;
+  transform: translateY(-8px);
+  pointer-events: none;
+  transition: opacity 0.25s ease, transform 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  overflow: hidden;
+}
+
+.notif-popover--open {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+.notif-popover__header {
+  background-color: var(--surface-sunken);
+  padding: 15px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.notif-popover__close {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  padding: 0;
+  border: none;
+  background: none;
+  cursor: pointer;
+  color: var(--text-tertiary);
+  transition: color 0.2s ease;
+}
+
+.notif-popover__close:hover {
+  color: var(--text-primary);
+}
+
+.notif-popover__close svg {
+  width: 16px;
+  height: 16px;
+}
+
+.notif-popover__row {
+  background-color: var(--surface-primary);
+  padding: 20px 30px;
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+}
+
+.notif-popover__avatar {
+  width: 65px;
+  height: 65px;
+  border-radius: 50%;
+  flex-shrink: 0;
+  object-fit: cover;
+}
+
+.notif-popover__body {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.notif-popover__meta {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 4px;
+}
+
+.notif-popover__text {
+  color: var(--text-secondary);
+}
+
+.notif-popover__handle {
+  font-weight: 700;
+  color: var(--blue-1);
+}
+
+@media (max-width: 520px) {
+  .notif-popover {
+    width: calc(100vw - 32px);
+    right: -16px;
+  }
 }
 
 
